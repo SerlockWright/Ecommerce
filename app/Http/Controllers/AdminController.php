@@ -8,8 +8,7 @@ use Illuminate\Support\Facades\Hash;
 
 use App\Models\User;
 
-class AdminController extends Controller
-{
+class AdminController extends Controller {
     public function AdminDashboard()
     {
         return view('admin.admin_dashboard');
