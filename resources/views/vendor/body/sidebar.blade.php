@@ -12,14 +12,22 @@
 	<!--navigation-->
 	<ul class="metismenu" id="menu">
 		<li>
+
+			<a href="{{ route('vendor.dashboard') }}">
+
 			<a href="{{ route('admin.dashboard') }}">
+
 				<div class="parent-icon"><i class='bx bx-home-circle'></i>
 				</div>
 				<div class="menu-title">Dashboard</div>
 			</a>
 		</li>
 			<li>
+
+				<a href="" class="has-arrow">
+
 				<a href="javascript:;" class="has-arrow">
+
 					<div class="parent-icon"><i class='bx bx-cookie'></i>
 					</div>
 					<div class="menu-title">Brand</div>

@@ -228,6 +228,19 @@
 			</div>
 			@php
 				$id = Auth::user()->id;
+
+				$vendorData = App\Models\User::find($id);
+			@endphp
+			<div class="user-box dropdown">
+				<a class="d-flex align-items-center nav-link dropdown-toggle dropdown-toggle-nocaret" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+					<img src="{{ (!empty($vendorData->photo)) ? url('upload/vendor_images/'.$vendorData->photo) : url('upload/no_image.jpg') }}" class="user-img" alt="user avatar">
+					<div class="user-info ps-3">
+						<p class="user-name mb-0">{{ $vendorData->name }}</p>
+						<p class="designattion mb-0">{{ $vendorData->username }}</p>
+					</div>
+				</a>
+				<ul class="dropdown-menu dropdown-menu-end">
+					<li><a class="dropdown-item" href="{{ route('vendor.profile') }}"><i class="bx bx-user"></i><span>Profile</span></a>
 				$adminData = App\Models\User::find($id);
 			@endphp
 			<div class="user-box dropdown">
@@ -240,6 +253,7 @@
 				</a>
 				<ul class="dropdown-menu dropdown-menu-end">
 					<li><a class="dropdown-item" href="{{ route('admin.profile') }}"><i class="bx bx-user"></i><span>Profile</span></a>
+
 					</li>
 					<li><a class="dropdown-item" href="{{ route('admin.change.password') }}"><i class="bx bx-cog"></i><span>Change Password</span></a>
 					<li><a class="dropdown-item" href=""><i class='bx bx-home-circle'></i><span>Dashboard</span></a>
