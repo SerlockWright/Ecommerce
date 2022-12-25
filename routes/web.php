@@ -43,7 +43,6 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     //Admin Change Password
     Route::get('/admin/change/password', [AdminController::class, 'AdminChangePassword'])->name('admin.change.password');
     Route::post('/admin/update/password', [AdminController::class, 'AdminUpdatePassword'])->name('update.password');
-
 });
 
 //vendor dashboard route
@@ -55,10 +54,9 @@ Route::middleware(['auth', 'role:vendor'])->group(function () {
     //Vendor Profile
     Route::get('/vendor/profile', [VendorController::class, 'VendorProfile'])->name('vendor.profile');
     Route::post('/vendor/profile/store', [VendorController::class, 'VendorProfileStore'])->name('vendor.profile.store');
-
-
-
-
+    //Vendor Change Password
+    Route::get('/vendor/change/password', [VendorController::class, 'VendorChangePassword'])->name('vendor.change.password');
+    Route::post('/vendor/update/password', [VendorController::class, 'VendorUpdatePassword'])->name('vendor.update.password');
 });
 
 Route::get('/admin/login', [AdminController::class, 'AdminLogin']);
