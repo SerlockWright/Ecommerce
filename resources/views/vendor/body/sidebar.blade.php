@@ -14,9 +14,6 @@
 		<li>
 
 			<a href="{{ route('vendor.dashboard') }}">
-
-			<a href="{{ route('admin.dashboard') }}">
-
 				<div class="parent-icon"><i class='bx bx-home-circle'></i>
 				</div>
 				<div class="menu-title">Dashboard</div>
