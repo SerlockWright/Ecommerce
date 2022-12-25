@@ -1,298 +1,98 @@
 <div class="sidebar-wrapper" data-simplebar="true">
-	<div class="sidebar-header">
-		<div>
-			<img src="{{ asset('adminbackend/assets/images/logo-icon.png') }}" class="logo-icon" alt="logo icon">
-		</div>
-		<div>
-			<h4 class="logo-text">Vendor</h4>
-		</div>
-		<div class="toggle-icon ms-auto"><i class='bx bx-arrow-to-left'></i>
-		</div>
-	</div>
-	<!--navigation-->
-	<ul class="metismenu" id="menu">
-		<li>
-
-			<a href="{{ route('vendor.dashboard') }}">
-				<div class="parent-icon"><i class='bx bx-home-circle'></i>
+			<div class="sidebar-header">
+				<div>
+					<img src="{{ asset('adminbackend/assets/images/logo-icon.png') }}" class="logo-icon" alt="logo icon">
 				</div>
-				<div class="menu-title">Dashboard</div>
-			</a>
-		</li>
-			<li>
-
-				<a href="" class="has-arrow">
-
-				<a href="javascript:;" class="has-arrow">
-
-					<div class="parent-icon"><i class='bx bx-cookie'></i>
-					</div>
-					<div class="menu-title">Brand</div>
-				</a>
-				<ul>
-					<li> <a href=""><i class="bx bx-right-arrow-alt"></i>All Brand</a>
-					</li>
-					<li> <a href=""><i class="bx bx-right-arrow-alt"></i>Add Brand </a>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<a href="" class="has-arrow">
-					<div class="parent-icon"><i class="bx bx-category"></i>
-					</div>
-					<div class="menu-title">Category</div>
-				</a>
-				<ul>
-					<li> <a href=""><i class="bx bx-right-arrow-alt"></i>All Category</a>
-					</li>
-					<li> <a href=""><i class="bx bx-right-arrow-alt"></i>Add Category</a>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<a href="javascript:;" class="has-arrow">
-					<div class="parent-icon"><i class="lni lni-codepen"></i>
-					</div>
-					<div class="menu-title">SubCategory</div>
-				</a>
-				<ul>
-					<li> <a href=""><i class="bx bx-right-arrow-alt"></i>All SubCategory</a>
-					</li>
-					<li> <a href=""><i class="bx bx-right-arrow-alt"></i>Add SubCategory</a>
-					</li>						
-				</ul>
-			</li>
-			<li>
-				<a href="" class="has-arrow">
-					<div class="parent-icon"><i class="lni lni-fresh-juice"></i>
-					</div>
-					<div class="menu-title">Product Manage</div>
-				</a>
-				<ul>
-					<li> <a href=""><i class="bx bx-right-arrow-alt"></i>All Product</a>
-					</li>
-					<li> <a href=""><i class="bx bx-right-arrow-alt"></i>Add Product</a>
-					</li>						
-				</ul>
-			</li>
-				<li>
-					<a href="" class="has-arrow">
-						<div class="parent-icon"><i class="lni lni-gallery"></i>
-						</div>
-						<div class="menu-title">Slider Manage</div>
-					</a>
-					<ul>
-						<li> <a href=""><i class="bx bx-right-arrow-alt"></i>All Slider</a>
-						</li>
-						<li> <a href=""><i class="bx bx-right-arrow-alt"></i>Add Slider</a>
-						</li>						 
-					</ul>
-				</li>
-				<li>
-					<a href="" class="has-arrow">
-						<div class="parent-icon"><i class="lni lni-image"></i>
-						</div>
-						<div class="menu-title">Banner Manage</div>
-					</a>
-					<ul>
-						<li> <a href=""><i class="bx bx-right-arrow-alt"></i>All Banner</a>
-						</li>
-						<li> <a href=""><i class="bx bx-right-arrow-alt"></i>Add Banner</a>
-						</li>
-					</ul>
-				</li>
-				<li>
-					<a href="javascript:;" class="has-arrow">
-						<div class="parent-icon"><i class="lni lni-invention"></i>
-						</div>
-						<div class="menu-title">Coupon System</div>
-					</a>
-					<ul>
-						<li> <a href=""><i class="bx bx-right-arrow-alt"></i>All Coupon</a>
-						</li>
-						<li> <a href=""><i class="bx bx-right-arrow-alt"></i>Add Coupon</a>
-						</li>
-						 
-					</ul>
-				</li>
-				<li>
-					<a href="javascript:;" class="has-arrow">
-						<div class="parent-icon"><i class="lni lni-map"></i>
-						</div>
-						<div class="menu-title">Shipping Area </div>
-					</a>
-					<ul>
-						<li> <a href=""><i class="bx bx-right-arrow-alt"></i>All Division</a>
-						</li>
-						<li> <a href=""><i class="bx bx-right-arrow-alt"></i>All District</a>
-						</li>
-
-						<li> <a href=""><i class="bx bx-right-arrow-alt"></i>All State</a>
-						</li>
-						 
-					</ul>
-				</li>
-
-				<li class="menu-label">UI Elements</li>
-				<li>
-					<a href="javascript:;" class="has-arrow">
-						<div class="parent-icon"><i class='lni lni-network'></i>
-						</div>
-						<div class="menu-title">Vendor Manage </div>
-					</a>
-					<ul>
-						<li> <a href=""><i class="bx bx-right-arrow-alt"></i>Inactive Vendor</a>
-						</li>
-						<li> <a href=""><i class="bx bx-right-arrow-alt"></i>Active Vendor</a>
-						</li>
-						 
-					</ul>
-				</li>
-				<li>
-					<a href="javascript:;" class="has-arrow">
-						<div class="parent-icon"><i class='bx bx-cart'></i>
-						</div>
-						<div class="menu-title">Order Manage </div>
-					</a>
-					<ul>
-						<li> <a href=""><i class="bx bx-right-arrow-alt"></i>Pending Order</a>
-						</li>
-						<li> <a href=""><i class="bx bx-right-arrow-alt"></i>Confirmed Order</a>
-						</li>
-						<li> <a href=""><i class="bx bx-right-arrow-alt"></i>Processing Order</a>
-						</li>
-						<li> <a href=""><i class="bx bx-right-arrow-alt"></i>Delivered Order</a>
-						</li>
-					</ul>
-				</li>
-				<li>
-					<a href="javascript:;" class="has-arrow">
-						<div class="parent-icon"><i class='lni lni-paperclip'></i>
-						</div>
-						<div class="menu-title">Return Order </div>
-					</a>
-					<ul>
-						<li> <a href=""><i class="bx bx-right-arrow-alt"></i>Return Request</a>
-						</li>
-						<li> <a href=""><i class="bx bx-right-arrow-alt"></i>Complete Request</a>
-						</li> 
-					</ul>
-				</li>
-	<li>
-					<a href="javascript:;" class="has-arrow">
-						<div class="parent-icon"><i class="lni lni-stats-up"></i>
-						</div>
-						<div class="menu-title">Reports Manage</div>
-					</a>
-					<ul>
-						<li> <a href=""><i class="bx bx-right-arrow-alt"></i>Report View</a>
-						</li>
-
-							<li> <a href=""><i class="bx bx-right-arrow-alt"></i>Order By User</a>
-						</li>
-					</ul>
-				</li>
-	<li>
-					<a href="javascript:;" class="has-arrow">
-						<div class="parent-icon"><i class="lni lni-slideshare"></i>
-						</div>
-						<div class="menu-title">User Manage</div>
-					</a>
-					<ul>
-						<li> <a href=""><i class="bx bx-right-arrow-alt"></i>All User</a>
-						</li>
-
-							<li> <a href=""><i class="bx bx-right-arrow-alt"></i>All Vendor</a>
-						</li>
-					</ul>
-				</li>
-				<li>
-					<a href="javascript:;" class="has-arrow">
-						<div class="parent-icon"><i class="lni lni-pyramids"></i>
-						</div>
-						<div class="menu-title">Blog Manage</div>
-					</a>
-					<ul>
-						<li> <a href=""><i class="bx bx-right-arrow-alt"></i>All Blog Categroy</a>
-						</li>
-
-							<li> <a href=""><i class="bx bx-right-arrow-alt"></i>All Blog Post</a>
-						</li>
-					</ul>
-				</li>
-	<li>
-		<a href="javascript:;" class="has-arrow">
-			<div class="parent-icon"><i class="lni lni-indent-increase"></i>
+				<div>
+					<h4 class="logo-text">Vendor</h4>
+				</div>
+				<div class="toggle-icon ms-auto"><i class='bx bx-arrow-to-left'></i>
+				</div>
 			</div>
-			<div class="menu-title">Review Manage</div>
-		</a>
-		<ul>
-			<li> <a href=""><i class="bx bx-right-arrow-alt"></i>Pending Review</a>
-			</li>
+			<!--navigation-->
+			<ul class="metismenu" id="menu">
 
-				<li> <a href=""><i class="bx bx-right-arrow-alt"></i>Publish Review</a>
-			</li>
-		</ul>
-	</li>
+					<li>
+					<a href="{{ route('vendor.dashboard') }}">
+						<div class="parent-icon"><i class='bx bx-cookie'></i>
+						</div>
+						<div class="menu-title">Dashboard</div>
+					</a>
+				</li>
+
+
 				<li>
-		<a href="javascript:;" class="has-arrow">
-			<div class="parent-icon"><i class="lni lni-cog"></i>
-			</div>
-			<div class="menu-title">Setting Manage</div>
-		</a>
-		<ul>
-			<li> <a href=""><i class="bx bx-right-arrow-alt"></i>Site Setting</a>
-			</li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class='bx bx-home-circle'></i>
+						</div>
+						<div class="menu-title">Brand</div>
+					</a>
+					<ul>
+						<li> <a href="index.html"><i class="bx bx-right-arrow-alt"></i>Default</a>
+						</li>
+						<li> <a href="dashboard-eCommerce.html"><i class="bx bx-right-arrow-alt"></i>eCommerce</a>
+						</li>
+						<li> <a href="dashboard-analytics.html"><i class="bx bx-right-arrow-alt"></i>Analytics</a>
+						</li>
+						<li> <a href="dashboard-digital-marketing.html"><i class="bx bx-right-arrow-alt"></i>Digital Marketing</a>
+						</li>
+						<li> <a href="dashboard-human-resources.html"><i class="bx bx-right-arrow-alt"></i>Human Resources</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class="bx bx-category"></i>
+						</div>
+						<div class="menu-title">Application</div>
+					</a>
+					<ul>
+						<li> <a href="app-emailbox.html"><i class="bx bx-right-arrow-alt"></i>Email</a>
+						</li>
+						<li> <a href="app-chat-box.html"><i class="bx bx-right-arrow-alt"></i>Chat Box</a>
+						</li>
+						<li> <a href="app-file-manager.html"><i class="bx bx-right-arrow-alt"></i>File Manager</a>
+						</li>
+						<li> <a href="app-contact-list.html"><i class="bx bx-right-arrow-alt"></i>Contatcs</a>
+						</li>
+						<li> <a href="app-to-do.html"><i class="bx bx-right-arrow-alt"></i>Todo List</a>
+						</li>
+						<li> <a href="app-invoice.html"><i class="bx bx-right-arrow-alt"></i>Invoice</a>
+						</li>
+						<li> <a href="app-fullcalender.html"><i class="bx bx-right-arrow-alt"></i>Calendar</a>
+						</li>
+					</ul>
+				</li>
+				 
+			
+				 
+				 
+			  
 
-				<li> <a href=""><i class="bx bx-right-arrow-alt"></i>Seo Setting</a>
-			</li>
-		</ul>
-	</li>
+
+
+				 
 			 
-		<li>
-		<a href="javascript:;" class="has-arrow">
-			<div class="parent-icon"><i class="lni lni-cart-full"></i>
-			</div>
-			<div class="menu-title">Stock Manage</div>
-		</a>
-		<ul>
-			<li> <a href=""><i class="bx bx-right-arrow-alt"></i>Product Stock</a>
-			</li>
-		</ul>
-	</li>
-				<li class="menu-label">Roles And Permission</li>
+			   
+				<li class="menu-label">Charts & Maps</li>
 				<li>
 					<a class="has-arrow" href="javascript:;">
-						<div class="parent-icon"><i class="lni lni-users"></i>
+						<div class="parent-icon"><i class="bx bx-line-chart"></i>
 						</div>
-						<div class="menu-title">Role & Permission</div>
+						<div class="menu-title">Charts</div>
 					</a>
 					<ul>
-						<li> <a href=""><i class="bx bx-right-arrow-alt"></i>All Permission</a>
+						<li> <a href="charts-apex-chart.html"><i class="bx bx-right-arrow-alt"></i>Apex</a>
 						</li>
-						<li> <a href=""><i class="bx bx-right-arrow-alt"></i>All Roles</a>
+						<li> <a href="charts-chartjs.html"><i class="bx bx-right-arrow-alt"></i>Chartjs</a>
 						</li>
-
-						<li> <a href=""><i class="bx bx-right-arrow-alt"></i>Roles in Permission</a>
-						</li>
-
-						<li> <a href=""><i class="bx bx-right-arrow-alt"></i>All Roles in Permission</a>
+						<li> <a href="charts-highcharts.html"><i class="bx bx-right-arrow-alt"></i>Highcharts</a>
 						</li>
 					</ul>
 				</li>
-				<li>
-					<a class="has-arrow" href="javascript:;">
-						<div class="parent-icon"><i class="lni lni-user"></i>
-						</div>
-						<div class="menu-title">Admin Manage </div>
-					</a>
-					<ul>
-						<li> <a href=""><i class="bx bx-right-arrow-alt"></i>All Admin</a>
-						</li>
-						<li> <a href=""><i class="bx bx-right-arrow-alt"></i>Add Admin</a>
-						</li>
-					</ul>
-				</li>
+				 
+		 
+			  
 				<li>
 					<a href=" " target="_blank">
 						<div class="parent-icon"><i class="bx bx-support"></i>
