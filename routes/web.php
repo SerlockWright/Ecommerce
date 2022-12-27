@@ -67,8 +67,15 @@ Route::get('/vendor/login', [VendorController::class, 'VendorLogin']);
 Route::middleware(['auth','role:admin'])->group(function(){
     Route::controller(BrandController::class)->group(function(){
         Route::get('/all/brand', 'AllBrand')->name('all.brand');
+        //Creat Brand
         Route::get('/add/brand', 'AddBrand')->name('add.brand');
         Route::post('/store/brand', 'StoreBrand')->name('store.brand');
+        //Update Brand
+        Route::get('/edit/brand/{id}', 'EditBrand')->name('edit.brand');
+        Route::post('/update/brand', 'UpdateBrand')->name('update.brand');
+        //Delete Brand
+        Route::get('/delete/brand/{id}', 'DeleteBrand')->name('delete.brand');
+
     });
 });
 //protect URL brand with role admin
