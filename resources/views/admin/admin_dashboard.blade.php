@@ -24,6 +24,10 @@
     <link rel="stylesheet" href="{{ asset('adminbackend/assets/css/dark-theme.css') }}" />
     <link rel="stylesheet" href="{{ asset('adminbackend/assets/css/semi-dark.css') }}" />
     <link rel="stylesheet" href="{{ asset('adminbackend/assets/css/header-colors.css') }}" />
+    <!-- Data Table -->
+    <link href="{{ asset('adminbackend/assets/plugins/datatable/css/dataTables.bootstrap5.min.css') }}"
+        rel="stylesheet" />
+    <!-- Data Table -->
     <!-- Toaster -->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
     <!-- Toaster   -->
@@ -79,6 +83,15 @@
     });
     </script>
     <script src="{{ asset('adminbackend/assets/js/index.js') }}"></script>
+    <!--Datatable-->
+    <script src="{{ asset('adminbackend/assets/plugins/datatable/js/jquery.dataTables.min.js') }}"></script>
+    <script>
+    $(document).ready(function() {
+        $('#example').DataTable();
+    });
+    </script>
+    <!--Datatable-->
+
     <!--app JS-->
     <script src="{{ asset('adminbackend/assets/js/app.js') }}"></script>
     <!-- Toaster JS -->
