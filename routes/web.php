@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\VendorController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\Backend\BrandController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -58,5 +59,15 @@ Route::middleware(['auth', 'role:vendor'])->group(function () {
     Route::post('/vendor/update/password', [VendorController::class, 'VendorUpdatePassword'])->name('vendor.update.password');
 });
 
+
 Route::get('/admin/login', [AdminController::class, 'AdminLogin']);
 Route::get('/vendor/login', [VendorController::class, 'VendorLogin']);
+
+//Brand Route
+Route::middleware(['auth','role:admin'])->group(function(){
+    Route::controller(BrandController::class)->group(function(){
+        Route::get('/all/brand', 'AllBrand')->name('all.brand');
+    
+    });
+});
+//protect URL brand with role admin
