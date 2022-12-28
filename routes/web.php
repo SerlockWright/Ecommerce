@@ -6,6 +6,8 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\VendorController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\Backend\BrandController;
+use App\Http\Controllers\Backend\CategoryController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -79,3 +81,18 @@ Route::middleware(['auth','role:admin'])->group(function(){
     });
 });
 //protect URL brand with role admin
+
+//Category Route
+Route::middleware(['auth','role:admin'])->group(function(){
+    Route::controller(CategoryController::class)->group(function(){
+        Route::get('/all/category', 'AllCategory')->name('all.category');
+        //Creat Brand
+        Route::get('/add/category', 'AddCategory')->name('add.category');
+        Route::post('/store/category', 'StoreCategory')->name('store.category');
+        //Update Brand
+        Route::get('/edit/category/{id}', 'EditCategory')->name('edit.category');
+        Route::post('/update/category', 'UpdateCategory')->name('update.category');
+        //Delete Brand
+        Route::get('/delete/category/{id}', 'DeleteCategory')->name('delete.category');
+    });
+});
