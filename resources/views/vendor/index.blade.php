@@ -1,6 +1,17 @@
 @extends('vendor.vendor_dashboard')
 @section('vendor')
+@php
+$id = Auth::user()->id;
+$vendor = App\Models\User::find($id);
+$status = $vendor->status;
+@endphp
 <div class="page-content">
+    @if($status === "active")
+    <h4 class="mb-4">Vendor Account is <span class="text-success">Active</span></h4>
+    @else
+    <h4>Vendor Account is <span class="text-danger">Inactive</span></h4>
+    <p class="text-danger mb-4">Please wait Admin check and approve your account</p>
+    @endif
     <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4">
         <div class="col">
             <div class="card radius-10 bg-gradient-deepblue">
@@ -12,7 +23,8 @@
                         </div>
                     </div>
                     <div class="progress my-3 bg-light-transparent" style="height:3px;">
-                        <div class="progress-bar bg-white" role="progressbar" style="width: 55%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div class="progress-bar bg-white" role="progressbar" style="width: 55%" aria-valuenow="25"
+                            aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                     <div class="d-flex align-items-center text-white">
                         <p class="mb-0">Today's Sale</p>
@@ -31,7 +43,8 @@
                         </div>
                     </div>
                     <div class="progress my-3 bg-light-transparent" style="height:3px;">
-                        <div class="progress-bar bg-white" role="progressbar" style="width: 55%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div class="progress-bar bg-white" role="progressbar" style="width: 55%" aria-valuenow="25"
+                            aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                     <div class="d-flex align-items-center text-white">
                         <p class="mb-0">Monthly Sale</p>
@@ -50,7 +63,8 @@
                         </div>
                     </div>
                     <div class="progress my-3 bg-light-transparent" style="height:3px;">
-                        <div class="progress-bar bg-white" role="progressbar" style="width: 55%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div class="progress-bar bg-white" role="progressbar" style="width: 55%" aria-valuenow="25"
+                            aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                     <div class="d-flex align-items-center text-white">
                         <p class="mb-0">Yearly Sale</p>
@@ -69,7 +83,8 @@
                         </div>
                     </div>
                     <div class="progress my-3 bg-light-transparent" style="height:3px;">
-                        <div class="progress-bar bg-white" role="progressbar" style="width: 55%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div class="progress-bar bg-white" role="progressbar" style="width: 55%" aria-valuenow="25"
+                            aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                     <div class="d-flex align-items-center text-white">
                         <p class="mb-0">Pending Orders</p>
@@ -89,7 +104,8 @@
                         </div>
                     </div>
                     <div class="progress my-3 bg-light-transparent" style="height:3px;">
-                        <div class="progress-bar bg-white" role="progressbar" style="width: 55%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div class="progress-bar bg-white" role="progressbar" style="width: 55%" aria-valuenow="25"
+                            aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                     <div class="d-flex align-items-center text-white">
                         <p class="mb-0">Total Vendor </p>
@@ -109,7 +125,8 @@
                         </div>
                     </div>
                     <div class="progress my-3 bg-light-transparent" style="height:3px;">
-                        <div class="progress-bar bg-white" role="progressbar" style="width: 55%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div class="progress-bar bg-white" role="progressbar" style="width: 55%" aria-valuenow="25"
+                            aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                     <div class="d-flex align-items-center text-white">
                         <p class="mb-0">Total User </p>
@@ -132,7 +149,7 @@
             </div>
             <hr>
             <div class="table-responsive">
-                
+
             </div>
         </div>
     </div>

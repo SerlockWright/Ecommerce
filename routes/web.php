@@ -7,6 +7,7 @@ use App\Http\Controllers\VendorController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\Backend\BrandController;
 use App\Http\Controllers\Backend\CategoryController;
+use App\Http\Controllers\Backend\SubcategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,6 +48,17 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::post('/admin/update/password', [AdminController::class, 'AdminUpdatePassword'])->name('update.password');
 });
 
+//Vendor active/inactive route
+Route::controller(AdminController::class)->group(function(){
+    Route::get('/inactive/vendor', 'InactiveVendor')->name('inactive.vendor');   
+    Route::get('/active/vendor', 'ActiveVendor')->name('active.vendor');
+    Route::get('inactive/vendor/details/{id}', 'InactiveVendorDetails')->name('inactive.vendor.details');
+    Route::post('/active/vendor/approve', 'ActiveVendorApprove')->name('active.vendor.approve');
+
+    Route::get('active/vendor/details/{id}', 'ActiveVendorDetails')->name('active.vendor.details');
+    Route::post('/inactive/vendor/approve', 'InactiveVendorApprove')->name('inactive.vendor.approve');
+ });
+
 //vendor dashboard route
 Route::middleware(['auth', 'role:vendor'])->group(function () {
     Route::get('/vendor/dashboard', [VendorController::class, 'VendorDashboard'])->name('vendor.dashboard');
@@ -62,8 +74,7 @@ Route::middleware(['auth', 'role:vendor'])->group(function () {
 });
 
 
-Route::get('/admin/login', [AdminController::class, 'AdminLogin']);
-Route::get('/vendor/login', [VendorController::class, 'VendorLogin']);
+
 
 //Brand Route
 Route::middleware(['auth','role:admin'])->group(function(){
@@ -96,3 +107,25 @@ Route::middleware(['auth','role:admin'])->group(function(){
         Route::get('/delete/category/{id}', 'DeleteCategory')->name('delete.category');
     });
 });
+
+//Subcategory Route
+Route::middleware(['auth','role:admin'])->group(function(){
+    Route::controller(SubcategoryController::class)->group(function(){
+        Route::get('/all/subcategory', 'AllSubcategory')->name('all.subcategory');
+        //Creat Brand
+        Route::get('/add/subcategory', 'AddSubcategory')->name('add.subcategory');
+        Route::post('/store/subcategory', 'StoreSubcategory')->name('store.subcategory');
+        //Update Brand
+        Route::get('/edit/subcategory/{id}', 'EditSubcategory')->name('edit.subcategory');
+        Route::post('/update/subcategory', 'UpdateSubcategory')->name('update.subcategory');
+        //Delete Brand
+        Route::get('/delete/subcategory/{id}', 'DeleteSubcategory')->name('delete.subcategory');
+    });
+});
+
+Route::get('/admin/login', [AdminController::class, 'AdminLogin']);
+
+//Register Vendor Route
+Route::get('/vendor/login', [VendorController::class, 'VendorLogin'])->name('vendor.login');
+Route::get('/become/vendor', [VendorController::class, 'BecomeVendor'])->name('become.vendor');
+Route::post('/vendor/register', [VendorController::class, 'VendorRegister'])->name('vendor.register');
