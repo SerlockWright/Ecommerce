@@ -138,11 +138,5 @@ Route::middleware(['auth','role:admin'])->group(function(){
         Route::get('/all/product', 'AllProduct')->name('all.product');
         //Creat Brand
         Route::get('/add/product', 'AddProduct')->name('add.product');
-        Route::post('/store/subcategory', 'StoreSubcategory')->name('store.subcategory');
-        //Update Brand
-        Route::get('/edit/subcategory/{id}', 'EditSubcategory')->name('edit.subcategory');
-        Route::post('/update/subcategory', 'UpdateSubcategory')->name('update.subcategory');
-        //Delete Brand
-        Route::get('/delete/subcategory/{id}', 'DeleteSubcategory')->name('delete.subcategory');
     });
 });
