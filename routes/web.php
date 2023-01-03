@@ -8,6 +8,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\Backend\BrandController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\SubcategoryController;
+use App\Http\Controllers\Backend\ProductController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -129,3 +131,18 @@ Route::get('/admin/login', [AdminController::class, 'AdminLogin']);
 Route::get('/vendor/login', [VendorController::class, 'VendorLogin'])->name('vendor.login');
 Route::get('/become/vendor', [VendorController::class, 'BecomeVendor'])->name('become.vendor');
 Route::post('/vendor/register', [VendorController::class, 'VendorRegister'])->name('vendor.register');
+
+//Product Route
+Route::middleware(['auth','role:admin'])->group(function(){
+    Route::controller(ProductController::class)->group(function(){
+        Route::get('/all/product', 'AllProduct')->name('all.product');
+        //Creat Brand
+        Route::get('/add/product', 'AddProduct')->name('add.product');
+        Route::post('/store/subcategory', 'StoreSubcategory')->name('store.subcategory');
+        //Update Brand
+        Route::get('/edit/subcategory/{id}', 'EditSubcategory')->name('edit.subcategory');
+        Route::post('/update/subcategory', 'UpdateSubcategory')->name('update.subcategory');
+        //Delete Brand
+        Route::get('/delete/subcategory/{id}', 'DeleteSubcategory')->name('delete.subcategory');
+    });
+});

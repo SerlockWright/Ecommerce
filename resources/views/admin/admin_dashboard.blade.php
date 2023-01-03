@@ -20,6 +20,8 @@
     <link href="{{ asset('adminbackend/assets/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('adminbackend/assets/css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('adminbackend/assets/css/icons.css') }}" rel="stylesheet">
+    <!-- Tags input -->
+    <link href="{{ asset('adminbackend/assets/plugins/input-tags/css/tagsinput.css') }}" rel="stylesheet" />
     <!-- Theme Style CSS -->
     <link rel="stylesheet" href="{{ asset('adminbackend/assets/css/dark-theme.css') }}" />
     <link rel="stylesheet" href="{{ asset('adminbackend/assets/css/semi-dark.css') }}" />
@@ -92,6 +94,18 @@
     });
     </script>
     <!--Datatable-->
+    <!-- Tag input -->
+    <script src="{{ asset('adminbackend/assets/plugins/input-tags/js/tagsinput.js') }}"></script>
+    <!-- Tinymce -->
+    <script src='https://cdn.tiny.cloud/1/vdqx2klew412up5bcbpwivg1th6nrh3murc6maz8bukgos4v/tinymce/5/tinymce.min.js'
+        referrerpolicy="origin">
+    </script>
+    <script>
+    tinymce.init({
+        selector: '#mytextarea'
+    });
+    </script>
+    <!-- End Tinymce -->
 
     <!--app JS-->
     <script src="{{ asset('adminbackend/assets/js/app.js') }}"></script>
