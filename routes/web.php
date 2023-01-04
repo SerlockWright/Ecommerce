@@ -122,6 +122,8 @@ Route::middleware(['auth','role:admin'])->group(function(){
         Route::post('/update/subcategory', 'UpdateSubcategory')->name('update.subcategory');
         //Delete Brand
         Route::get('/delete/subcategory/{id}', 'DeleteSubcategory')->name('delete.subcategory');
+        //Get Subcategory
+        Route::get('/subcategory/ajax/{category_id}' , 'GetSubcategory');    
     });
 });
 
