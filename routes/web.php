@@ -138,7 +138,9 @@ Route::post('/vendor/register', [VendorController::class, 'VendorRegister'])->na
 Route::middleware(['auth','role:admin'])->group(function(){
     Route::controller(ProductController::class)->group(function(){
         Route::get('/all/product', 'AllProduct')->name('all.product');
-        //Creat Brand
+        //Add Product
         Route::get('/add/product', 'AddProduct')->name('add.product');
+        Route::post('/store/product', 'StoreProduct')->name('store.product');
+
     });
 });
