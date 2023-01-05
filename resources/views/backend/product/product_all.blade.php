@@ -9,7 +9,8 @@
                 <ol class="breadcrumb mb-0 p-0">
                     <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
                     </li>
-                    <li class="breadcrumb-item active" aria-current="page">All Product</li>
+                    <li class="breadcrumb-item active" aria-current="page">All Product <span
+                            class="badge rounded-pill bg-danger">{{ count($products) }}</span></li>
                 </ol>
             </nav>
         </div>
@@ -41,7 +42,7 @@
                         @foreach($products as $key => $item)
                         <tr>
                             <td> {{ $key+1 }}</td>
-                            <td><img src="{{ asset($item->product_thumbnail) }}" style="width:70px; height:40px;"></td>
+                            <td><img src="{{ asset($item->product_thumbnail) }}" style="width:60px; height:60px;"></td>
                             <td> {{ $item->product_name}} </td>
                             <td> {{ $item->selling_price}} </td>
                             <td> {{ $item->product_qty}} </td>
@@ -64,12 +65,12 @@
                                 @endif
                             </td>
                             <td>
-                                <a href="{{ route('edit.category', $item->id) }}" class="btn btn-info"
-                                    title="Edit Data"><i class="fa fa-pencil"></i></a>
+                                <a href="{{ route('edit.product', $item->id) }}" class="btn btn-info"
+                                    title="Edit Product"><i class="fa fa-pencil"></i></a>
                                 <a href="{{ route('delete.category', $item->id) }}" id="delete" title="Delete Data"
                                     class="btn btn-danger"><i class="fa fa-trash"></i></a>
                                 <a href="{{ route('delete.category', $item->id) }}" title="Detail Product"
-                                    class="btn btn-info"><i class="fa fa-eye"></i></a>
+                                    class="btn btn-warning"><i class="fa fa-eye"></i></a>
                                 @if($item->status == 1)
                                 <a href="{{ route('delete.category', $item->id) }}" title="Inactive"
                                     class="btn btn-success"><i class="fa-solid fa-thumbs-down"></i></a>

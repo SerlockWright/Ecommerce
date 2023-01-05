@@ -141,6 +141,12 @@ Route::middleware(['auth','role:admin'])->group(function(){
         //Add Product
         Route::get('/add/product', 'AddProduct')->name('add.product');
         Route::post('/store/product', 'StoreProduct')->name('store.product');
-
+        //Edit Product
+        Route::get('/edit/product/{id}', 'EditProduct')->name('edit.product');
+        Route::post('/update/product', 'UpdateProduct')->name('update.product');
+        //Update Product thumbnail
+        Route::post('/update/product/thumbnail', 'UpdateProductThumbnail')->name('update.product.thumbnail');
+        //Update Product Multi Image
+        Route::post('/update/product/multi/image', 'UpdateProductMultiImage')->name('update.product.multi.image');
     });
 });
