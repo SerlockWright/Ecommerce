@@ -48,7 +48,7 @@
                             <td> {{ $item->product_qty}} </td>
                             <td>
                                 @if($item->discount_price == NULL)
-                                <span class="badge rounded-pill bg-danger">No Discount</span>
+                                <span class="badge rounded-pill bg-info">No Discount</span>
                                 @else
                                 @php
                                 $amount = $item->selling_price - $item->discount_price;
@@ -67,15 +67,15 @@
                             <td>
                                 <a href="{{ route('edit.product', $item->id) }}" class="btn btn-info"
                                     title="Edit Product"><i class="fa fa-pencil"></i></a>
-                                <a href="{{ route('delete.category', $item->id) }}" id="delete" title="Delete Data"
+                                <a href="{{ route('delete.product', $item->id) }}" id="delete" title="Delete Data"
                                     class="btn btn-danger"><i class="fa fa-trash"></i></a>
                                 <a href="{{ route('delete.category', $item->id) }}" title="Detail Product"
                                     class="btn btn-warning"><i class="fa fa-eye"></i></a>
                                 @if($item->status == 1)
-                                <a href="{{ route('delete.category', $item->id) }}" title="Inactive"
+                                <a href="{{ route('product.inactive', $item->id) }}" title="Inactive"
                                     class="btn btn-success"><i class="fa-solid fa-thumbs-down"></i></a>
                                 @else
-                                <a href="{{ route('delete.category', $item->id) }}" title="Active"
+                                <a href="{{ route('product.active', $item->id) }}" title="Active"
                                     class="btn btn-success"><i class="fa-solid fa-thumbs-up"></i></a>
                                 @endif
                             </td>
