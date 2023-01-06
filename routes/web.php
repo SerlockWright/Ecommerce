@@ -9,6 +9,7 @@ use App\Http\Controllers\Backend\BrandController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\SubcategoryController;
 use App\Http\Controllers\Backend\ProductController;
+use App\Http\Controllers\Backend\VendorProductController;
 use App\Http\Middleware\RedirectIfAuthenticated;
 
 /*
@@ -65,18 +66,21 @@ Route::controller(AdminController::class)->group(function(){
 Route::middleware(['auth', 'role:vendor'])->group(function () {
     Route::get('/vendor/dashboard', [VendorController::class, 'VendorDashboard'])->name('vendor.dashboard');
     Route::get('/vendor/logout', [VendorController::class, 'VendorDestroy'])->name('vendor.logout');
-
-
     //Vendor Profile
     Route::get('/vendor/profile', [VendorController::class, 'VendorProfile'])->name('vendor.profile');
     Route::post('/vendor/profile/store', [VendorController::class, 'VendorProfileStore'])->name('vendor.profile.store');
     //Vendor Change Password
     Route::get('/vendor/change/password', [VendorController::class, 'VendorChangePassword'])->name('vendor.change.password');
     Route::post('/vendor/update/password', [VendorController::class, 'VendorUpdatePassword'])->name('vendor.update.password');
+
+    //vendor product controller
+    Route::controller(VendorProductController::class)->group(function(){
+        Route::get('/vendor/all/product', 'VendorAllProduct')->name('vendor.all.product');
+        Route::get('/vendor/add/product', 'VendorAddProduct')->name('vendor.add.product');
+        Route::get('vendor/subcategory/ajax/{category_id}' , 'VendorGetSubcategory');
+
+    });
 });
-
-
-
 
 //Brand Route
 Route::middleware(['auth','role:admin'])->group(function(){
@@ -124,6 +128,7 @@ Route::middleware(['auth','role:admin'])->group(function(){
         Route::get('/delete/subcategory/{id}', 'DeleteSubcategory')->name('delete.subcategory');
         //Get Subcategory
         Route::get('/subcategory/ajax/{category_id}' , 'GetSubcategory');    
+        
     });
 });
 
